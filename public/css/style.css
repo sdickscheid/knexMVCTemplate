@@ -1,0 +1,13 @@
+.form-border {
+  border: 1px solid black;
+  border-radius: 4px;
+  /*padding: 15px;*/
+}
+
+.error-image {
+  background-image: url("/images/puzzle-missing.jpg");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home - Galvanize Company Manager</title>
+    <script src="https://use.fontawesome.com/71f27b38fa.js"></script>
+  	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Galvanize Company Manager</a>
+      <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+      </ul> -->
+    </div>
+  </nav>
+  <div class="container">
+
+    <!-- FORM - CREATE NEW COMPANY  -->
+    <div class="row col s12">
+      <h5>Create a New Company</h5>
+    </div>
+
+    <div class="row">
+      <form class="col s12 form-border" action="/company" method="POST">
+        <div class="row">
+          <div class="input-field col s6">
+            <input placeholder="Company Name" id="company" type="text" name="company" class="validate">
+          <label for="company">Company Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input placeholder="#" id="suite" type="number" name="suite" class="validate">
+            <label for="suite">Suite No.</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="Description" id="description" type="text" name="description" class="validate">
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <!-- SUBMIT BUTTON -->
+        <div class="row col s12 add-comp-btn">
+          <button class="btn waves-effect waves-light" type="submit" formmethod="post">Add User<i class="fa fa-user-plus left" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+          <% for(let i=0; i<companies.length; i++){ %>
+          <div class="card-content white-text">
+            <span class="card-title"><%= companies[i].name %></span>
+            <p><%= companies[i].description %></p>
+            <p>Suite # <%= companies[i].suite %></p>
+          </div>
+          <div class="card-action">
+            <a href="/company/<%= companies[i].id %>" target="blank">View Company</a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <!-- END Container -->
+  </div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </body>
+    <!-- insert JS script  -->
+</html>

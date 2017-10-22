@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profile - Galvanize Company Manager</title>
+    <script src="https://use.fontawesome.com/71f27b38fa.js"></script>
+  	<!-- Compiled and minified CSS -->
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  	<link rel="stylesheet" href="/css/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <h4><%= com.name %></h4>
+        <p><%= com.description %></p>
+        <p>Suite #: <%= com.suite %></p>
+      </div>
+
+      <div class="row">
+        <h5>Company Members</h5>
+        <% for(let i=0; i<members.length; i++){ %>
+          <p><%= members[i].first_name %> <%= members[i].last_name %> - <%= members[i].position %> (Member # <%= members[i].id %>)</p>
+          <p>Email: <%= members[i].email %></p>
+        <% } %>
+      </div>
+
+      <div class="row">
+        <form action="/member/<%= com.id %>" method="post">
+          <input type="text" name="first_name" placeholder="First Name">
+          <input type="text" name="last_name" placeholder="Last Name">
+          <input type="text" name="position" placeholder="Position">
+          <input type="text" name="email" placeholder="Email Address">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+
+
+
+
+    <!--Import jQuery before materialize.js-->
+  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  </body>
+    <!-- insert JS script  -->
+</html>
